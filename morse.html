@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morse Code Translator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Morse Code Translator</h1>
+        <p class="subtitle">
+          Translate text to Morse code and vice versa with audio playback
+        </p>
+      </header>
+
+      <div class="direction-toggle">
+        <button id="toMorseBtn" class="toggle-btn active">Text to Morse</button>
+        <button id="toTextBtn" class="toggle-btn">Morse to Text</button>
+      </div>
+
+      <div class="translator-container">
+        <div class="input-section">
+          <div class="section-title">
+            <h2 id="input-title">Text Input</h2>
+          </div>
+          <textarea
+            id="inputText"
+            placeholder="Enter your text here..."
+          ></textarea>
+          <div class="controls">
+            <button id="translateBtn" class="btn">Translate</button>
+            <button id="clearBtn" class="btn btn-clear">Clear</button>
+          </div>
+          <div class="speed-control">
+            <label for="speed">Playback Speed:</label>
+            <input type="range" id="speed" min="5" max="20" value="10" />
+            <span id="speedValue">10 WPM</span>
+          </div>
+        </div>
+
+        <div class="output-section">
+          <div class="section-title">
+            <h2 id="output-title">Morse Code Output</h2>
+            <button id="playBtn" class="btn btn-play">Play</button>
+          </div>
+          <textarea
+            id="outputText"
+            readonly
+            placeholder="Translation will appear here..."
+          ></textarea>
+          <div class="controls">
+            <button id="copyBtn" class="btn">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="morse-reference">
+        <div class="reference-title">
+          <h2>Morse Code Reference</h2>
+          <button id="toggleReference" class="btn">Show</button>
+        </div>
+        <div id="referenceContent" class="hidden">
+          <div class="reference-grid" id="referenceGrid">
+            <!-- Filled by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Add this section after the morse-reference div -->
+      <div class="history-section">
+        <div class="section-title">
+          <h2>Translation History</h2>
+          <button id="clearHistoryBtn" class="btn btn-clear">
+            Clear History
+          </button>
+        </div>
+        <div id="historyList" class="history-list">
+          <!-- History items will be added here by JavaScript -->
+        </div>
+      </div>
+
+      <div class="practice-section">
+        <div class="section-title">
+          <h2>Practice Mode</h2>
+          <button id="startQuizBtn" class="btn">Start Quiz</button>
+        </div>
+        <div id="quizContainer" class="hidden">
+          <div id="quizQuestion" class="quiz-question"></div>
+          <input type="text" id="quizAnswer" placeholder="Your answer..." />
+          <button id="submitQuizBtn" class="btn">Submit</button>
+          <div id="quizFeedback"></div>
+          <div id="quizScore">Score: 0/0</div>
+        </div>
+      </div>
+
+      <footer>
+        <p></p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
